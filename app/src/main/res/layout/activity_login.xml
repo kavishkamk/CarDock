@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@drawable/background_img">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="148dp"
-        android:layout_height="101dp"
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="83dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
+        app:layout_constraintVertical_bias="0.050000012"
         app:srcCompat="@drawable/car_doc_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
