@@ -5,9 +5,10 @@
       <map>
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/btn_bg.xml" value="0.1865" />
+        <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/ic_facebook.xml" value="0.1865" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/input_bg.xml" value="0.17" />
-        <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_registration.xml" value="0.25" />
       </map>
