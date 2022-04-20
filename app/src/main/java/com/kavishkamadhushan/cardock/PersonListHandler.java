@@ -7,6 +7,7 @@ package com.kavishkamadhushan.cardock;
  */
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class PersonListHandler {
 
@@ -41,10 +42,7 @@ public class PersonListHandler {
      * if already available return ture, else return false
      */
     public boolean isAvailableUserName(String userName) {
-        for(Person p : personArrayList) {
-            if (p.getUserName().equals(userName)) return true;
-        }
-        return false;
+        return isTrueCondition(person -> person.getUserName().equals(userName));
     }
 
     /*
@@ -52,10 +50,7 @@ public class PersonListHandler {
      * if already available return true, else return false
      */
     public boolean isAvailableEmail(String email) {
-        for(Person p : personArrayList) {
-            if (p.getEmail().equals(email)) return true;
-        }
-        return false;
+        return isTrueCondition(person -> person.getEmail().equals(email));
     }
 
     /*
@@ -63,8 +58,18 @@ public class PersonListHandler {
      * if user name and password is correct return true, else return false
      */
     public boolean isCorrectPassword(String userName, String password) {
+        return isTrueCondition(person ->
+                person.getUserName().equals(userName) && person.getPwd().equals(password));
+    }
+
+    /*
+     * this method used to check given condition true or not after iterate through personArrayList
+     * this is lambda expression (user Predicate<T> interface
+     * if given condition true return true else return false
+     */
+    private boolean isTrueCondition(Predicate<Person> predicate) {
         for (Person p : personArrayList) {
-            if(p.getUserName().equals(userName) && p.getPwd().equals(password)) {
+            if (predicate.test(p)) {
                 return true;
             }
         }
