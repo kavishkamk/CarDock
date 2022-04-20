@@ -19,6 +19,7 @@ public class RegistrationActivity extends AppCompatActivity {
         initiate();
     }
 
+    // initiate the functionality of this class
     private void initiate() {
 
         TextView signInTxtView = findViewById(R.id.txtViewRegNotification); // sign in TextView
@@ -38,9 +39,48 @@ public class RegistrationActivity extends AppCompatActivity {
 
     // user registration method
     private void userRegistration(EditText userName, EditText email, EditText pwd, EditText cPwd) {
-        inputValidation.isValidUserName(userName);
-        inputValidation.isValidFormatEmail(email);
-        inputValidation.isValidPassword(pwd);
-        inputValidation.isConfirmPassword(pwd, cPwd);
+        // check inputs validity
+        if(inputValidation.isValidUserName(userName) && inputValidation.isValidFormatEmail(email) &&
+                inputValidation.isValidPassword(pwd) && inputValidation.isConfirmPassword(pwd, cPwd)) {
+
+            PersonListHandler personListHandler = PersonListHandler.getPersonListHandler();
+
+            // check with already available account details
+            if(isPossibleToCreateAccount(personListHandler, userName, email)) {
+                // register user
+                personListHandler.addPerson(new Person(getString(userName), getString(email), getString(pwd)));
+                startLoginActivity(); //
+            }
+        }
+
+    }
+
+    /*
+     * this method is used to check given details can used to register new user
+     * for register user account
+     *   - email and username should not be already available
+     * if the details can register return true, else return false
+     */
+    private boolean isPossibleToCreateAccount(PersonListHandler personListHandler,
+                                              EditText userName, EditText email) {
+
+        if(personListHandler.isAvailableUserName(getString(userName))) {
+            userName.setError("Already available");
+            return false;
+        } else if (personListHandler.isAvailableEmail(getString(email))) {
+            email.setError("Already available");
+            return false;
+        }
+
+        return true;
+    }
+
+    //this method use to extract string from given EditText
+    private String getString(EditText editText) {
+        return editText.getText().toString().trim();
+    }
+
+    private void startLoginActivity() {
+        startActivity(new Intent(this, LoginActivity.class));
     }
 }

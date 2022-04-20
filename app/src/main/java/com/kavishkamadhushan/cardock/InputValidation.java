@@ -17,7 +17,7 @@ public class InputValidation {
      *   -
      */
     public boolean isValidUserName(EditText editText) {
-        String userName = editText.getText().toString().trim();
+        String userName = getString(editText);
 
         if(userName.isEmpty()) {
             editText.setError("Field can't be Empty");
@@ -49,7 +49,7 @@ public class InputValidation {
      *   - must NOT start with '?' or '!'
      */
     public boolean isValidPassword(EditText editText) {
-        String pwd = editText.getText().toString().trim();
+        String pwd = getString(editText);
 
         if(pwd.isEmpty()) {
             editText.setError("Field can't be Empty");
@@ -91,7 +91,7 @@ public class InputValidation {
      *   - it should have given structure
      */
     public boolean isValidFormatEmail(EditText editText) {
-        String email = editText.getText().toString().trim();
+        String email = getString(editText);
 
         if(email.isEmpty()) {
             editText.setError("Field can't be empty");
@@ -109,7 +109,10 @@ public class InputValidation {
      * if equals return true else return false
      */
     public boolean isConfirmPassword(EditText pwd, EditText cPwd) {
-        if(pwd.equals(cPwd)) {
+        String password = getString(pwd);
+        String cPassword = getString(cPwd);
+
+        if(password.equals(cPassword)) {
             return true;
         } else {
             cPwd.setError("Didn't match password");
@@ -124,6 +127,13 @@ public class InputValidation {
      */
     private boolean isValidText(String text, RegExPatterns regExPatterns) {
         return text.matches(regExPatterns.getPATTERN());
+    }
+
+    /*
+     * this method use to extract string from given EditText
+     */
+    private String getString(EditText editText) {
+        return editText.getText().toString().trim();
     }
 
 }
