@@ -7,30 +7,41 @@
     android:background="@drawable/background_img"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/editTextLoginUserPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_security"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/white"
-        android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:maxLength="16"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/editTxtLoginUserName"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTxtLoginUserName"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtLoginUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtLoginUserName"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white">
+
+        <EditText
+            android:id="@+id/editTextLoginUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:background="@drawable/input_bg"
+            android:drawableStart="@drawable/ic_security"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/white"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/editTxtLoginUserName"
@@ -92,8 +103,8 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/editTextLoginUserPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginUserPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -102,8 +113,8 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/btn_bg"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@+id/editTextLoginUserPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextLoginUserPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/forgotPwdTxtView"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
