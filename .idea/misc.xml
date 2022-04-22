@@ -8,9 +8,11 @@
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/ic_facebook.xml" value="0.1865" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/drawable/input_bg.xml" value="0.17" />
+        <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_car_register.xml" value="0.25" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="..\:/localrepo/AndroidProjects/CarDock/app/src/main/res/layout/spinner_item.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>

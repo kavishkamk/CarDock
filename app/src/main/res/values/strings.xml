@@ -15,4 +15,94 @@
     <string name="google">Google</string>
     <string name="fb">Facebook</string>
     <string name="empty" />
+    <string name="sell_car">Sell Car</string>
+    <string name="brandOfTheCar">Brand of the car</string>
+    <string name="modelOfCar">Model of the car</string>
+    <string name="fuelType">Fuel Type</string>
+    <string name="transmissionType">Transmission Type</string>
+    <string name="carColor">Select Car Color</string>
+    <string name="car_manufacturing_year">Car Manufacturing Year</string>
+    <string name="drivenKm">Kilometers Driven</string>
+    <string name="numOfOwners">Number of Owners</string>
+    <string name="expectedSellingPrice">Expected Selling Price</string>
+    <string-array name="carBrands">
+        <item>Ashok Leyland</item>
+        <item>Aston Martin</item>
+        <item>Audi</item>
+        <item>Bentley</item>
+        <item>BMW</item>
+        <item>Bugatti</item>
+        <item>Cadillac</item>
+        <item>Caterham</item>
+        <item>Chevrolet</item>
+        <item>Chrysler</item>
+        <item>Conquest</item>
+        <item>Daewoo</item>
+        <item>Datsun</item>
+        <item>DC</item>
+        <item>Dodge</item>
+        <item>Ferrari</item>
+        <item>Fiat</item>
+        <item>Force</item>
+        <item>Ford</item>
+        <item>Hindustan Motors</item>
+        <item>Honda</item>
+        <item>Hummer</item>
+        <item>Hyundai</item>
+        <item>ICML</item>
+        <item>Infiniti</item>
+        <item>Isuzu</item>
+        <item>Jaguar</item>
+        <item>Jeep</item>
+        <item>Kia</item>
+        <item>Lamborghini</item>
+        <item>Land Rover</item>
+        <item>Lexus</item>
+        <item>Mahindra</item>
+        <item>Mahindra Renault</item>
+        <item>Mahindra Ssangyong</item>
+        <item>Maruti</item>
+        <item>Maserati</item>
+        <item>Maybach</item>
+        <item>Mazda</item>
+        <item>Mercedes-Benz</item>
+        <item>MG</item>
+        <item>Mini</item>
+        <item>Mitsubishi</item>
+        <item>Nissan</item>
+        <item>Opel</item>
+        <item>Peugeot</item>
+        <item>Porsche</item>
+        <item>Premier</item>
+        <item>Reva</item>
+        <item>Renault</item>
+        <item>Rolls-Royce</item>
+        <item>San Motors</item>
+        <item>Skoda</item>
+        <item>Smart</item>
+        <item>Subaru</item>
+        <item>Tata</item>
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Volvo</item>
+    </string-array>
+    <string-array name="fuelType">
+        <item>Petrol</item>
+        <item>Diesel</item>
+        <item>CNG</item>
+        <item>LPG</item>
+        <item>Electric</item>
+    </string-array>
+    <string-array name="transmissionType">
+        <item>Transmission Type</item>
+        <item>Automatic</item>
+        <item>Manual</item>
+        <item>Semi-Automatic</item>
+    </string-array>
+    <string-array name="carColors">
+        <item>Black</item>
+        <item>Grey</item>
+        <item>Red</item>
+        <item>White</item>
+    </string-array>
 </resources>

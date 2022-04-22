@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -45,7 +44,9 @@ public class LoginActivity extends AppCompatActivity {
     private void login(EditText userName, EditText pwd) {
         if(inputValidation.isValidUserName(userName) && inputValidation.isValidPassword(pwd)) {
             PersonListHandler personListHandler = PersonListHandler.getPersonListHandler();
-            isValidLogin(personListHandler, userName, pwd);
+            if(isValidLogin(personListHandler, userName, pwd)) {
+                startActivity(new Intent(this, CarRegisterActivity.class));
+            }
         }
     }
 
