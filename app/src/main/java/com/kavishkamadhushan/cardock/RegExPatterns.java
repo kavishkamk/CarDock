@@ -15,7 +15,11 @@ public enum RegExPatterns {
     PASSWORD_CONTAIN("[a-zA-Z0-9[~!@#$%^&*()+_{}\\\\[\\\\]:;,.<>/?-]].*"),
     // this says it don't have another invalid symbols other than this
     EMAIL_PATTERN("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
-            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"); // check given email is valid
+            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"), // check given email is valid
+    VALID_STRING_NAME("[\\w-\\s]*"),
+    VALID_YEAR("\\d{4}"), // check for valid year
+    ONLY_NUMBERS("\\d*"), // only numbers
+    FLOAT_NUMBER("[\\d.,-]*"); // digits, dots, comma only
 
     private final String PATTERN;
 

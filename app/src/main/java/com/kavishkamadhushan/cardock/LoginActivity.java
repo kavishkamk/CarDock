@@ -45,7 +45,9 @@ public class LoginActivity extends AppCompatActivity {
         if(inputValidation.isValidUserName(userName) && inputValidation.isValidPassword(pwd)) {
             PersonListHandler personListHandler = PersonListHandler.getPersonListHandler();
             if(isValidLogin(personListHandler, userName, pwd)) {
-                startActivity(new Intent(this, CarRegisterActivity.class));
+                Intent intent = new Intent(this, CarRegisterActivity.class);
+                intent.putExtra(Constants.userName, getString(userName));
+                startActivity(intent);
             }
         }
     }

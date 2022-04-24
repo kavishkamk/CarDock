@@ -19,8 +19,7 @@ public class InputValidation {
     public boolean isValidUserName(EditText editText) {
         String userName = getString(editText);
 
-        if(userName.isEmpty()) {
-            editText.setError("Field can't be Empty");
+        if(isEmptyEditText(editText)) {
             return false;
         } else if(userName.length() > 15) {
             editText.setError("User Name too long.");
@@ -51,8 +50,7 @@ public class InputValidation {
     public boolean isValidPassword(EditText editText) {
         String pwd = getString(editText);
 
-        if(pwd.isEmpty()) {
-            editText.setError("Field can't be Empty");
+        if(isEmptyEditText(editText)) {
             return false;
         } else if (pwd.length() < 8) {
             editText.setError("Use at least 8 characters");
@@ -91,12 +89,10 @@ public class InputValidation {
      *   - it should have given structure
      */
     public boolean isValidFormatEmail(EditText editText) {
-        String email = getString(editText);
 
-        if(email.isEmpty()) {
-            editText.setError("Field can't be empty");
+        if(isEmptyEditText(editText)) {
             return false;
-        } else if(!isValidText(email, RegExPatterns.EMAIL_PATTERN)) {
+        } else if(!isValidText(getString(editText), RegExPatterns.EMAIL_PATTERN)) {
             editText.setError("Invalid Email");
             return false;
         }
@@ -118,6 +114,89 @@ public class InputValidation {
             cPwd.setError("Didn't match password");
             return false;
         }
+    }
+
+    /*
+     * this method used to check given TextView is valid
+     * if Empty return false, else return true
+     * for valid
+     *  - should not be empty
+     *  -
+     */
+    public boolean isValidName(EditText editText) {
+
+        if(isEmptyEditText(editText)){
+            return false;
+        } else if(!isValidText(getString(editText), RegExPatterns.VALID_STRING_NAME)) {
+            editText.setError("Only user (a-z,A-Z,0-9,-,_)");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+     * this method used to check valid years
+     * if valid year return, true else return false
+     * for valid :
+     *   - text should NOT be empty
+     *   - should contain 4 digits
+     */
+    public boolean isValidYear(EditText editText) {
+
+        if(isEmptyEditText(editText)) {
+            return false;
+        } else if(!isValidText(getString(editText), RegExPatterns.VALID_YEAR)) {
+            editText.setError("Not Valid Year [yyyy]");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+     * this method used to check valid float number
+     * if valid this return true, else return false
+     * for valid:
+     *   - should NOT be empty
+     *   - only contain numbers, ',' and '.'
+     */
+    public boolean isValidFloatNumber(EditText editText) {
+
+        if(isEmptyEditText(editText)) {
+            return false;
+        } else if(!isValidText(getString(editText), RegExPatterns.FLOAT_NUMBER)) {
+            editText.setError("use only (0-9), '.' and ','");
+            return false;
+        }
+
+        return true;
+    }
+
+    /*
+     * this method used to check valid numbers
+     * if valid return true, else return false
+     */
+    public boolean isOnlyNumbers(EditText editText) {
+
+        if(isEmptyEditText(editText)) {
+            return false;
+        } else if(!isValidText(getString(editText), RegExPatterns.ONLY_NUMBERS)) {
+            editText.setError("Not Valid Number");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+     * this method used to check given EditText is empty
+     * if empty return true, else return false
+     * if empty set Error Message ("Empty Field");
+     */
+    private boolean isEmptyEditText(EditText editText) {
+        if(getString(editText).isEmpty()) {
+            editText.setError("Empty Field");
+            return true;
+        }
+        return false;
     }
 
     /*
